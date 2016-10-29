@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-spa</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <style type="text/css">
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+        position: static;
+      }
+      .fade-enter, .fade-leave-active {
+        position: absolute;
+        opacity: 0;
+      }
+      .mdl-layout-title {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <router-link class="mdl-layout-title" tag="span" to="/">Junior Tech Jobs</router-link>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+              <router-link to="/add-job" class="mdl-navigation__link">Add Job</router-link>
+              <router-link to="/about" class="mdl-navigation__link">About</router-link>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Junior Tech Jobs</span>
+          <nav class="mdl-navigation">
+            <!-- <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a> -->
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop mdl-cell--1-offset-tablet mdl-cell--10-col-tablet mdl-cell--12-col-phone">
+                <transition name="fade">
+                  <router-view></router-view>
+                </transition>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
