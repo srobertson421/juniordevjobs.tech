@@ -47,6 +47,9 @@
   import db from '../services/firebase-service.js';
   export default {
     name: 'addJob',
+    mounted() {
+      componentHandler.upgradeAllRegistered();
+    },
     data() {
       return {
         newJob: {
@@ -68,4 +71,6 @@
   }
 </script>
 
-<style></style>
+<style>
+  @import url("https://code.getmdl.io/1.2.1/material.teal-blue.min.css");
+</style>

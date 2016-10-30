@@ -9,6 +9,9 @@
 
   export default {
     name: 'home',
+    mounted() {
+      componentHandler.upgradeAllRegistered();
+    },
     data() {
       return {};
     },
